@@ -1,0 +1,18 @@
+Parallel code running
+
+strategy = tf.distribute.MirroredStrategy()
+
+with strategy.scopy():
+	model = tf.keras.models.Sequential([
+		tf.keras.layers.Dense(64, input_shape=[10]),
+		tf.keras.layers.Dense(64, activation='relu'),
+		tf.keras.layers.Dense(10, activation='softmax')])
+
+	model.compile(optimizer='adam',
+			loss='categoriacal_crossentropy',
+			metrics=['accuracy'])
+
+
+Multi-node Synchronous(so far works for tf 2.0.0)
+
+strategy = tf.distribute.experimental.MultiWorkerMirroredStrategy()
