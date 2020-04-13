@@ -1,3 +1,16 @@
+
+def greet(greetings, name):
+    return f"{greetings} {name}" 
+
+print(greet("Hello", "Sakha"))
+
+# Filtering
+li = [1, 2, 3, 4, 5, 6, 7]
+
+filtered_list= list(filter(lambda x: (x % 2 != 0), li))
+
+print(filtered_list)
+
 # substituting the argument 2 for x
 print((lambda x: x)(2))
 
