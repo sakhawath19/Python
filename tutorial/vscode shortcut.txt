@@ -1,0 +1,25 @@
+#select line
+comment/uncomment (CTRL+L) #better for multiple line comment
+
+# comment or uncomment
+comment Line (CTRL+/ on Windows)
+Comment Line (CTRL+K CTRL+C)
+remove CommentLine (CTRL+K CTRL+U)
+
+# Multiline comment
+generate multiline comment alt + shift + A
+
+# Move line
+move code Alt+Up/Down
+
+# Look for defination
+alt + f12
+
+# Create collapseble region
+ctrl + M + H/ctrl + M + U
+
+
+
+
+
+
