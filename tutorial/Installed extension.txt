@@ -1,0 +1,3 @@
+install python
+install kite
+install autoDocstring
