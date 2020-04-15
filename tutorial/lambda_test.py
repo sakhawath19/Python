@@ -22,6 +22,7 @@ print("The sum of the tolatl list:",\
     functools.reduce((lambda a, b: a if a > b else b), li))
 
 # map will return value [True, False, True]
+# Mapping
 a = [1, 2, 3, 4, 5, 6, 7]
 maped = map (lambda x: x % 2 == 0, a)  
 print(maped) # it will return object
