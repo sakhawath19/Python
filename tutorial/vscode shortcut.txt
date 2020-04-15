@@ -18,6 +18,12 @@ alt + f12
 # Create collapseble region
 ctrl + M + H/ctrl + M + U
 
+# Delete line 
+ctrl + shift + K
+
+# Command window to terminal 
+ctrl + @
+
 
 
 

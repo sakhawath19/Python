@@ -6,6 +6,7 @@ param = {"user_id": 200,
 print(type(param))
 print(param)
 
+
 post = dict(message="hello", language="English")
 post["user_id"] = 300
 post["location"] = "Tampere"
@@ -35,3 +36,6 @@ for key in post.keys():
 
 for key, value in post.items():
     print(key, "=", value )
+
+for value in post.values():
+    print("value =", value)
