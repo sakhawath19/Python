@@ -1,0 +1,19 @@
+# conda info
+conda info
+
+# environment [Create search delete activate clone]
+conda create --name bio-env_3.7.5 python=3.7.5 # create environment 
+conda env list
+conda env remove --name bio-env_3.7.5
+conda activate bio-env_3.7.5
+conda create --clone bio-env_3.7.5 --name bio-env_3.7.5-2
+ 
+
+# Install update and search packages
+conda install <package name>
+pip install <package name>
+
+conda update <package name>
+
+pip freeze # provides all the modules 
+pip search <module name>
