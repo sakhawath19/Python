@@ -24,6 +24,9 @@ ctrl + shift + K
 # Command window to terminal 
 ctrl + @
 
+# Move to the next file
+ctrl + tab
+
 
 
 
