@@ -2,15 +2,24 @@ import argparse
 
 parser = argparse.ArgumentParser(description="calculate X to the power of Y")
 
+# creating group of optional argument which are mutually exclusive. So you can not use both at the same time
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-v", "--verbose", action="store_true")
 group.add_argument("-q", "--quiet", action="store_true")
 
-# parser.add_mutually_exclusive_group().add_argument("-v", "--verbose", action="store_true")
-# parser.add_mutually_exclusive_group().add_argument("-q", "--quiet", action="store_true")
+group2 = parser.add_mutually_exclusive_group()
+group2.add_argument("-p", "--play", action="store_true")
+group2.add_argument("-n", "-noplay", action="store_true")
 
-parser.add_argument("x", type=int, help="the base")
-parser.add_argument("y", type=int, help="the exponent")
+parser.add_argument("x", type=int, help="the base") # positional argument, you have to provide value
+parser.add_argument("y", type=int, help="the exponent") # positional argument, you have to provide value
+
+# action count, explained more in next example
+parser.add_argument("-a", "--count_verbose", action="count", default=0) # optional argument, it will count verbosity
+
+# choises of the argument could be added
+parser.add_argument("-c", "--choice", type=int,
+                    choices=[1, 2, 3], help="increase output verbosity")
 
 args = parser.parse_args()
 answer = args.x**args.y
@@ -40,6 +49,8 @@ parser.add_argument("x", type=int, help="the exponent")
 # count action will take consideration of number of verbosity
 # It works similar to action_true
 # It does not accept any value
+# “count”, to count the number of occurrences of a specific optional arguments
+
 parser.add_argument("-v", "--verbosity", action="count", default=0)
 
 args = parser.parse_args()
@@ -54,8 +65,8 @@ if args.verbosity >= 1:
     print(answer)
 
 # Run the program
-# $ python .\argparse_test.py 2 3 -vv
-# $ python argparse_test.py 2 3 -vvv
+# $ python argparse_test.py 2 3 -vv # counts verbosity 2
+# $ python argparse_test.py 2 3 -vvv # counts verbosity 3
 # $ python argparse_test.py 2 3 -v 1
 '''
 '''
@@ -89,6 +100,8 @@ parser = argparse.ArgumentParser()
 
 # optional argument --verbose is defined as -v
 # the state of the argument is stored true. If you add any value, it will show an error
+# need to call optional argument -v to make its action true
+
 parser.add_argument("-v", "--verbose", help="increase output verbosity", action="store_true")
 
 args = parser.parse_args()
@@ -158,25 +171,25 @@ print(f"first argument {args.msg1}. Second argument {args.msg2}.")
 '''
 import argparse
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser() # created an object of argument parser # msg is a positional argument
 
-parser.add_argument("msg", help="echo the string you use here")
+parser.add_argument("msg", help="echo the string you use here") # msg will receive value from command line
 
-args = parser.parse_args()
+args = parser.parse_args() # args will track all the given argument
 
 print(args.msg)
 
 # Run the code 
-# $ python argparse_test.py hi
+# $ python argparse_test.py hi # output will be hi
 '''
 
 
 '''
 import argparse 
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description="Testing")
 parser.parse_args()
 # Run this code 
-# $ python argparse.test --help
+# $ python argparse_test --help
 # See what happens
 '''
