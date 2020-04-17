@@ -87,3 +87,4 @@ print(my_merged_dict)
 # string to list
 a = [*"RealPython"]
 print(a)
+
