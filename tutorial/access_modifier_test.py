@@ -1,6 +1,10 @@
 # Example of public, protected and private access modifier
 # Example of name mangling
 
+# Access modifier also ensure encapsulation 
+# This puts restrictions on accessing variables and methods directly 
+# and can prevent the accidental modification of data.
+
 class Super: 
       
     # public data member 
@@ -64,7 +68,7 @@ if __name__ == "__main__":
 
     # Name mangling
     # Python performs name mangling on private attributes. 
-    # Every member with a double underscore will be changed to _class__variable
+    # Every member with a double underscore will be changed to _<className><memberName>
     s = Super("Geeks", 4, "Geeks !")  
     print(s._Super__var3)
 
@@ -72,7 +76,8 @@ if __name__ == "__main__":
     # here you will see _Super__var3
     print(dir(s)) 
     
-    # Object can access protected member
+    # Object can access protected member in python. 
+    # in C++ or java protected member can be accessed within the class or by subclass only
     print("Object is accessing protected member:", obj._var2)
 
     # object can not access private member, so it will generate Attribute error
