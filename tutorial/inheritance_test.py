@@ -15,6 +15,9 @@ class Grandfather:
         self.grandmother_name = "Momotaz Mohol"
         return self.grandmother_name
 
+    def __str__(self):
+        return "Grandfather"
+
 # If Grandfather is a base class then Mother is an intermediate class
 # here child is derived class from Mother and and Father 
 class Mother(Grandfather): 
@@ -46,6 +49,9 @@ class Child(Mother, Father):
     def get_age(self):
         print("Age:", self.__age) # Private member is accessable inside the class 
 
+    def __str__(self): 
+        return "Child"
+
 
 # Child and Adopted_child both are inheriting Mother class
 # This is known as hierarchical inheritance
@@ -72,7 +78,8 @@ if __name__ == "__main__":
     print(c.grandmother())
     print(c._height)
     c.get_age()
-    print(c.__age) # This is not accessable outside class because this is a private member
+    print("__str__ is helping to print:", c)
+    # print(c.__age) # This is not accessable outside class because this is a private member
 
     ac = Adopted_child("unknown", "Sultana", "Serazul")
     ac.biological_parent()
