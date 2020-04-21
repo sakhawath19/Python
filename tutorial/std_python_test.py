@@ -20,3 +20,6 @@ If you want a list of those, they are defined in the standard module builtins:
 # >>> import builtins
 # >>> dir(builtins)
 
+import glob 
+print(glob.glob('*.py'))
+
