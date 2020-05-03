@@ -1,0 +1,11 @@
+EXTENSION FOR VSCODE
+
+-install python extension 
+
+-AREPL for python # Real time output
+
+-install kite # Helps get help docs in autopilot
+
+-install autoDocstring # Useful for writing documents
+
+-"Pytest" for testing 
