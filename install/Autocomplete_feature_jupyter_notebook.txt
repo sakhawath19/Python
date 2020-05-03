@@ -1,0 +1,13 @@
+- open anaconda command prompt
+- activate desired environment or keep your base environment
+- Run these commands in anaconda command prompt
+- open jupyter notebook
+- you will see nbextension tab
+- open nbextension and clck on Hinterland 
+- Autocompletion or snippet will be activated 
+
+
+pip install jupyter_contrib_nbextensions
+pip install jupyter_nbextensions_configurator
+jupyter contrib nbextension install --user
+jupyter nbextensions_configurator enable --user
