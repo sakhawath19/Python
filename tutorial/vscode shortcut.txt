@@ -1,8 +1,9 @@
 #select line
-comment/uncomment (CTRL+L) #better for multiple line comment
+comment/uncomment (CTRL+L) 		# better for multiple line comment
 
 # comment or uncomment
 comment Line (CTRL+/ on Windows)
+block comment (alt + shift + A)
 Comment Line (CTRL+K CTRL+C)
 remove CommentLine (CTRL+K CTRL+U)
 
@@ -10,7 +11,7 @@ remove CommentLine (CTRL+K CTRL+U)
 generate multiline comment alt + shift + A
 
 # Move line
-move code Alt+Up/Down
+move code alt+Up/Down
 
 # Look for defination
 alt + f12
@@ -24,8 +25,14 @@ ctrl + shift + K
 # Command window to terminal 
 ctrl + @
 
+# Terminal to editor
+ctrl + @
+
 # Move to the next file
 ctrl + tab
+
+# Select multiple cursor to edit multple lines at the same time
+alt + left click
 
 
 
