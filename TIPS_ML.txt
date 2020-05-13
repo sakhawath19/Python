@@ -1,0 +1,20 @@
+### Data observation
+
+- pd.data.describe()			# count, mean, std, min, 25%, 50%, 75%, max
+
+- pd.data.groupy('class').size()	# Display class count, On classifcation problems you need to know how balanced the class values are.
+
+- pd.data.corr(method='pearson')	# Pairwise correlation, 
+					# Highly correlated data can suffer in linear and logistic regression for classification 
+
+- pd.data.skew()			# Many ML algorithms assume gaussian distriubution(normal, bell). 
+					# An attribute has a skew may allow you to perform data preparation
+					# to correct the skew and later improve the accuracy of your models.
+
+- data.hist()				# Visualize an attribute is Gaussian, skewed or even has an exponential distribution 
+					# It can also help you see possible outliers.
+
+- data.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
+					# Abstracted histogram with a smooth curve drawn through the top of each bin
+
+	
