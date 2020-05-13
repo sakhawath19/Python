@@ -5,7 +5,10 @@
 - pd.data.groupy('class').size()	# Display class count, On classifcation problems you need to know how balanced the class values are.
 
 - pd.data.corr(method='pearson')	# Pairwise correlation, 
-					# Highly correlated data can suffer in linear and logistic regression for classification 
+					# Highly correlated data can suffer in linear and logistic regression for classification
+ 
+- ax.matshow(correlation, vmin=-1, vmax=1)
+					# visualize pairwise correlation matrix with color code
 
 - pd.data.skew()			# Many ML algorithms assume gaussian distriubution(normal, bell). 
 					# An attribute has a skew may allow you to perform data preparation
@@ -16,5 +19,12 @@
 
 - data.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
 					# Abstracted histogram with a smooth curve drawn through the top of each bin
+					# Visualize skewness of each attribute 
+
+- data.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
+					# observe the spread of the attributes 
+
+- scatter_matrix(data)			# Pairwise relationship with scatter plot 
+
 
 	
