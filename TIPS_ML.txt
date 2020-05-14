@@ -1,3 +1,30 @@
+### Basic settings
+
+plt.style.use('fivethirtyeight')	# Choose any plotting style which you like, for example seaborn
+
+pd.set_option('display.width', 100)	# Set how many columns you want to see in your window
+pd.set_option('precision', 3)
+					
+
+
+
+
+
+### Data cleaning
+
+- pd.data.info()			# Observe missing values in each attribute
+
+- pd.data.count()			# Non null values in each attribute
+
+- pd.data.isnull().sum()		# Null values in each attribute
+
+- pd.data.isnull().count()		# Valid + null values  
+
+
+
+
+
+
 ### Data observation
 
 - pd.data.describe()			# count, mean, std, min, 25%, 50%, 75%, max
@@ -25,6 +52,18 @@
 					# observe the spread of the attributes 
 
 - scatter_matrix(data)			# Pairwise relationship with scatter plot 
+
+
+
+
+
+### Data preparation
+
+Generally, I would recommend creating many dierent views and transforms of your data,
+then exercise a handful of algorithms on each view of your dataset. This will help you to 
+fush out which data transforms might be better at exposing the structure of your problem in general.
+
+
 
 
 	
