@@ -1,9 +1,10 @@
-### Basic settings
+### Basic settings for jupyter notebook 
 
 plt.style.use('fivethirtyeight')	# Choose any plotting style which you like, for example seaborn
 
 pd.set_option('display.width', 100)	# Set how many columns you want to see in your window
-pd.set_option('precision', 3)
+
+pd.set_option('precision', 3)		# Number of digit to be precise
 					
 
 
@@ -12,46 +13,57 @@ pd.set_option('precision', 3)
 
 ### Data cleaning
 
-- pd.data.info()			# Observe missing values in each attribute
+- df.info()				# Observe missing values in each attribute
 
-- pd.data.count()			# Non null values in each attribute
+- df.count()				# Non null values in each attribute
 
-- pd.data.isnull().sum()		# Null values in each attribute
+- df.isnull().sum()			# Null values in each attribute
 
-- pd.data.isnull().count()		# Valid + null values  
+- df.isnull().count()			# Valid + null values  
 
+- df.dropna(inplace = True)		# Drop rows with any missing values; usually not recommended
+					# Look at Bookmarks/Kaggle/how to handle missing data 
 
+- df.dropna(how ='all',inplace = True)	# Drop rows if all the values are null 
+
+- df.dropna(thresh=4, inplace=True)	# Delete rows that has more than 4 missing values 
+
+- df.dropna(axis=1, inplace=True)	# Delete features that has some missing values
+
+The only case that it may worth deleting a variable is when its missing values are more than 60% of the observations 
+but only if that variable is insignificant.Taking this into consideration, 
+imputation is always a preferred choice over deleting variables.
 
 
 
 
 ### Data observation
 
-- pd.data.describe()			# count, mean, std, min, 25%, 50%, 75%, max
+- df.describe()				# count, mean, std, min, 25%, 50%, 75%, max
 
-- pd.data.groupy('class').size()	# Display class count, On classifcation problems you need to know how balanced the class values are.
+- df.groupy('class').size()		# Display class count, On classifcation problems you need to know how balanced the class values are.
 
-- pd.data.corr(method='pearson')	# Pairwise correlation, 
+- df.corr(method='pearson')		# Pairwise correlation, 
 					# Highly correlated data can suffer in linear and logistic regression for classification
  
 - ax.matshow(correlation, vmin=-1, vmax=1)
 					# visualize pairwise correlation matrix with color code
 
-- pd.data.skew()			# Many ML algorithms assume gaussian distriubution(normal, bell). 
+- df.skew()				# Many ML algorithms assume gaussian distriubution(normal, bell). 
 					# An attribute has a skew may allow you to perform data preparation
 					# to correct the skew and later improve the accuracy of your models.
 
-- data.hist()				# Visualize an attribute is Gaussian, skewed or even has an exponential distribution 
+- df.hist()				# Visualize an attribute is Gaussian, skewed or even has an exponential distribution 
 					# It can also help you see possible outliers.
 
-- data.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
+- df.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
 					# Abstracted histogram with a smooth curve drawn through the top of each bin
 					# Visualize skewness of each attribute 
 
-- data.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
+- df.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
 					# observe the spread of the attributes 
 
-- scatter_matrix(data)			# Pairwise relationship with scatter plot 
+- scatter_matrix(df)			# Pairwise relationship with scatter plot 
 
 
 
