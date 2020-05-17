@@ -197,6 +197,55 @@ imputation is always a preferred choice over deleting variables.
 
 
 
+
+
+### Aggregation and Grouping ####################################################################
+
+- # Look at github/python/pandas/aggregate_grouping.ipynb
+
+- AGGREGATION 
+
+- df['salary'].median()					# Median of a sereies. Calculate median and ignore NaN values
+
+- df.median()					# Median of a df. Calculate median of each column 
+
+- df['salary'].count()					# How many people answered the question; Do not get confuse with value_counts()
+
+- df['Hobbyist'].value_counts(normalize=True)		# How many people have answered yes how many people answered no; Normalze will give percentage 
+
+
+
+-GROUPING
+
+- country_grp = df.groupby(['Country']) 			# country_grp holds a df group object 
+
+- country_grp.get_group('United States')			# Display results from specific group 
+
+- country_grp['SocialMedia'].value_counts(normalize=True)	# Display multiple series such as country social media and counts
+
+- country_grp['SocialMedia'].value_counts().loc['India']   	# Now only changing the country name you can search social media uses of each country
+
+- filt = (df['Country'] == 'United States')			# Same result as group. But you have to filter for every country
+  df.loc[filt]
+  df.loc[filt, 'SocialMedia'].value_counts() 
+
+- country_grp['salary'].median() 				# It returns median of each group 
+
+- country_grp['salary'].median().loc['Germany']
+
+- country_grp['salary'].agg(['median', 'mean'])		# Multiple aggregate function 
+
+- country_grp['ConvertedComp'].agg(['median', 'mean']).loc['Finland']
+
+
+- country_respondents = df['Country'].value_counts() 
+- country_uses_python = country_grp['LanguageWorkedWith'].apply(lambda x: x.str.contains('Python').sum())
+- python_df = pd.concat([country_respondents, country_uses_python], axis='columns')
+
+
+
+
+
 ### Data sorting ################################################################################
 
 - df.sort_values(by='last', ascending=True)			# Sort by last name in ascending order 
