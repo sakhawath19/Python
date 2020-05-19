@@ -12,9 +12,11 @@ pd.set_option('precision', 3)				# Number of digit to be precise
 
 ### Data loading ##################################################################################	
 				
-df = pd.read_csv('./input/data.csv', index_col='name', na_values=['NAN', 'Missing'])
+- df = pd.read_csv('./input/data.csv', index_col='name', na_values=['NAN', 'Missing'])
 						# Replacing custom missing values by NaN during loading data
 
+
+- df = pd.read_csv(filename, names=col_list, header=0, index_col='col2', na_values=['NAN', 'Missing'])
 
 
 
@@ -83,6 +85,8 @@ imputation is always a preferred choice over deleting variables.
 - df['col'].replace(['zero', 'fifty'], [0, 50])			# Replace single/multiple string by any values 
 
 - df.replace(['NA', 'Missing'], np.nan, inplace=True)		# Replace custom missing values by np.nan.  # System can deal with np.nan. It will consider as missing value
+
+- df.fillna(method='bfill',inplace=True)			# For back fill, for forward fill use method=ffill
 
 					
 - df['col'] = df['col'].map({'Yes': True, 'No': False})		# Replacing/Mapping any values of a column # inplace argument does not work here. So explicitly need to assign changes 
