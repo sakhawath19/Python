@@ -1,0 +1,165 @@
+### HOW TO READ DOCUMENTATION
+
+- Check your python version first
+
+- Go to the www.python.org
+
+- Select your python version from the top left corner
+
+- Search your desired item 
+
+- str.capitalize() 				#  no need any arguments
+
+- str.replace(old, new, [, count])			# old and new mandatory arguments, count is optional
+
+- str.startswith(prefix[, start[, end]]		# prefix obligatory arguments, end can be provided only if start is provided
+  str.startswith("ola", 3, 6] 			# arguments needed to provide in order 
+
+- str.split(sep=None, maxsplit=-1)			# named argument, there are default arguments 
+  str.split(maxsplit=3, sep=",")			# you can set it in any order
+
+
+- >> python -m pydoc				# look at the pydoc module; use pydoc to look at class, module or function 
+					# you do not need to import module to use pydoc 
+
+- >> python -m pydoc math			# displays brief description and function it contains 
+
+- >> python -m pydoc tuple 			# displays helps for class 
+
+- >> python -m pydoc pow			# displays doc for function 
+
+- INTERACTIVE MODE
+
+- >>python
+
+- >> help(pow)				# need to import module to use help function 
+					# gives same resut as pydoc 
+
+- >> python -m pydoc -k			# search all available modules
+
+- >> python -m pydoc -k ftp
+
+- >> python -m pydoc ftplib
+
+- >> python -m pydoc -k sql			# does python contains any module for sql
+
+- >> python -m  pydoc sqlite3
+
+- >> python -m pydoc -p 314			# start an http server on the given port on the local machine
+
+- >> b					# to open the browser 
+
+- >> q					# to stop the server 
+
+- >> python -m pydoc -b  			# start http server at the available port 
+
+- >> python -m pydoc -w json 			# write html documentation in the current directory; 
+					# write documentation for module, package, class, function etc
+					# this is useful when you want to host a documentation in elsewhere other 
+					# than your host machine
+
+
+
+- >>     
+
+
+### https://realpython.com/documenting-python-code/
+### https://pep8.org/#maximum-line-length
+
+
+- Code should have maximum of 80 characters
+
+- Comments should have a maximum length of 72 characters
+
+- While you are developing new section of your code, it may be appropriate to 
+   first use comments as a way of planning. Remember to remove it once the 
+   actual code has been implemented and reviewed. 
+
+- Explain the intent of specific sections of the code 
+
+- Explain how the algorithm (for complicated one) works and why it is selected  
+
+- TAGGING: Label specific sections of code where known issues or improvement
+	    located. Examples: BUG, FIXME, TODO
+	- TODO: Add condition for when val is None
+
+- Avoid long comments. Keep it concise and focus
+
+- Keep comments as close to the code being described as possible
+
+- Do not use complex formatting such as tables or ASCII figures
+
+- Design your code to comment itself
+
+- TYPE HINTING: Reduce comments but you may need extra work to update it
+	def hello_name(name: str) -> str:
+    		return(f"Hello {name}")
+
+- >>help(str) 	or 	>>   print(str.__doc__) to get the doc 
+
+- Documenting python class
+
+class Animal:
+    """
+    A class used to represent an Animal
+
+    ...
+
+    Attributes
+    ----------
+    says_str : str
+        a formatted string to print out what the animal says
+    name : str
+        the name of the animal
+    sound : str
+        the sound that the animal makes
+    num_legs : int
+        the number of legs the animal has (default 4)
+
+    Methods
+    -------
+    says(sound=None)
+        Prints the animals name and what sound it makes
+    """
+
+    says_str = "A {name} says {sound}"
+
+    def __init__(self, name, sound, num_legs=4):
+        """
+        Parameters
+        ----------
+        name : str
+            The name of the animal
+        sound : str
+            The sound the animal makes
+        num_legs : int, optional
+            The number of legs the animal (default is 4)
+        """
+
+        self.name = name
+        self.sound = sound
+        self.num_legs = num_legs
+
+    def says(self, sound=None):
+        """Prints what the animals name is and what sound it makes.
+
+        If the argument `sound` isn't passed in, the default Animal
+        sound is used.
+
+        Parameters
+        ----------
+        sound : str, optional
+            The sound the animal makes (default is None)
+
+        Raises
+        ------
+        NotImplementedError
+            If no sound is set for the animal or passed in as a
+            parameter.
+        """
+
+        if self.sound is None and sound is None:
+            raise NotImplementedError("Silent Animals are not supported!")
+
+        out_sound = self.sound if sound is None else sound
+        print(self.says_str.format(name=self.name, sound=out_sound))
