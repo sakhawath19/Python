@@ -18,4 +18,36 @@ for later use on new data that has missing values.
 
 
 
+PREPARE DATA
+-----------------------------------------------------------------------------------------------------------------------------
+
+Generally, I would recommend creating many dierent views and transforms of your data,
+then exercise a handful of algorithms on each view of your dataset. This will help you to 
+fush out which data transforms might be better at exposing the structure of your problem in general.
+
+
+- RESCALE DATA
+
+useful for algorithms that weight inputs like regression and neural networks and algorithms that 
+use distance measures like k-Nearest Neighbors.
+
+
+- STANDARDIZE
+
+It is most suitable for techniques that assume a Gaussian distribution in the input variables and 
+work better with rescaled data, such as linear regression, logistic regression and linear discriminate analysis.
+
+
+- NORMALIZE
+
+This pre-processing method can be useful for sparse datasets (lots of zeros) with attributes of varying 
+scales when using algorithms that weight input values such as neural networks and algorithms that use
+distance measures such as k-Nearest Neighbors.
+
+
+- BINARIZE 
+
+It can be useful when you have probabilities that you want to make into crisp values. It is also useful 
+when feature engineering and you want to add new features that indicate something meaningful.
+
 
