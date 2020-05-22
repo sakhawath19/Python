@@ -6,6 +6,8 @@ pd.set_option('display.width', 100)			# Set how many columns you want to see in 
 
 pd.set_option('precision', 3)				# Number of digit to be precise
 
+set_printoptions(precision=3) 				
+
 
 
 
