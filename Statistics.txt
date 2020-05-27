@@ -1,0 +1,24 @@
+How to write square in notepad
+---------------------------------------------------------------------------------------------------
+R + alt + 0178 = R²
+
+R(square) and R
+---------------------------------------------------------------------------------------------------
+
+https://www.youtube.com/watch?v=2AQKmw14mHM
+
+Quantifying the difference between the fitted line with the mean line.
+That means calculating R(square). R(sqr) lies between 0 and 1 or in percentage.
+
+for example: if size and weight relationship R(sqr) is .81, then it tells there is 
+81% less variation around the line than the mean. 
+
+It also tells the relationship between the two variables explains 81% of the variation
+of the data. 
+
+R= 0.7,	R² = .7² = 0.5 	50% of the original variation is explained
+R= 0.5,	R² = .5² = 0.25 	25% of the original variation is explained
+
+Intuitively better to understand R² than plain R.
+But R² can not explain the positive or negative correlation. Then R is needed. 
+
