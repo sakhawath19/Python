@@ -1,5 +1,8 @@
+DATASET
+https://github.com/jbrownlee/Datasets
+
 MISSING VALUE 
------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 -k-Nearest Neighbors that can ignore a column from a distance measure when a value is missing. 
 Naive Bayes can also support missing values when making a prediction.
 
@@ -19,7 +22,8 @@ for later use on new data that has missing values.
 
 
 PREPARE DATA
------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing
 
 Generally, I would recommend creating many dierent views and transforms of your data,
 then exercise a handful of algorithms on each view of your dataset. This will help you to 
@@ -49,5 +53,162 @@ distance measures such as k-Nearest Neighbors.
 
 It can be useful when you have probabilities that you want to make into crisp values. It is also useful 
 when feature engineering and you want to add new features that indicate something meaningful.
+
+
+
+FEATURE SELECTION
+----------------------------------------------------------------------------------------------------------------------------
+https://scikit-learn.org/stable/modules/feature_selection.html
+
+- Benifits: 1. Reduces overfitting 2. Improves accuracy 3. Reduce training time 
+
+- UNIVARIATE SELECTION 
+
+Many dierent statistical test scan be used with this selection method. For example the ANOVA F-value
+method is appropriate for numerical inputs and categorical data
+
+- RECURSIVE FEATURE ELIMINATION 
+
+The Recursive Feature Elimination (or RFE) works by recursively removing attributes and
+building a model on those attributes that remain. It uses the model accuracy to identify which
+attributes (and combination of attributes) contribute the most to predicting the target attribute.
+
+- PRINCIPLE COMPONENT ANALYSIS
+
+Principal Component Analysis (or PCA) uses linear algebra to transform the dataset into a
+compressed form. Generally this is called a data reduction technique. A property of PCA is that
+you can choose the number of dimensions or principal components in the transformed result.
+
+- FEATURE IMPORTANCE  
+
+Bagged decision trees like Random Forest and Extra Trees can be used to estimate the importance
+of features.
+
+
+
+PERFORMENCE EVALUATION OF ML ALGORITHM
+----------------------------------------------------------------------------------------------------------------------------
+
+- TRAIN AND TEST SETS
+
+This algorithm evaluation technique is very fast. It is ideal for large datasets (millions of
+records) where there is strong evidence that both splits of the data are representative of the
+underlying problem. Because of the speed, it is useful to use this approach when the algorithm
+you are investigating is slow to train. A downside of this technique is that it can have a high
+variance in results.
+
+- K-FOLD CROSS VALIDATION
+
+It estimate the performance of a ML algorithm with less variance than a single train-test set split.
+It works by splitting the dataset into k-parts (e.g. k = 5 or k = 10).
+Each split of the data is called a fold. The algorithm is trained on k - 1 folds with one held back 
+and tested on the held back fold. This is repeated so that each fold of the dataset is given a 
+chance to be the held back test set. After running cross-validation you end up with k different 
+performance scores that you can summarize using a mean and a standard deviation.
+
+- LEAVE ONE OUT CROSS VALIDATION
+
+Leave one out cross validation computationally expensive than K-fold cross validation. 
+It validates model for each data point. So it train the model except the one data point and tested with 
+that data point only. It would give more variance than k-fold cross validation. 
+
+- REPEATED RANDOM TEST TRAIN SPLITS 
+
+It repeats the train-test split multiple times to reduce the variance or improve the performence. 
+A down side is that repetitions may include much of the same data in the train or the test split 
+from run to run, introducing redundancy into the evaluation. For example splits the data 
+into a 67%/33% train/test split and repeats the process 10 times.
+
+-REMARKS
+
+- Generally k-fold cross-validation is the gold standard for evaluating the performance of a
+machine learning algorithm on unseen data with k set to 3, 5, or 10.
+
+- Using a train/test split is good for speed when using a slow algorithm and produces
+performance estimates with lower bias when using large datasets.
+ 
+- Techniques like leave-one-out cross-validation and repeated random splits can be useful
+intermediates when trying to balance variance in the estimated performance, model
+training speed and dataset size.
+
+- The best advice is to experiment and find a technique for your problem that is fast and
+produces reasonable estimates of performance that you can use to make decisions. If in doubt,
+use 10-fold cross-validation.
+
+
+
+
+PERFORMENCE METRICS
+----------------------------------------------------------------------------------------------------------------------------
+
+- CLASSIFICATION ACCURACY
+
+Ratio of correct predictions and all predictions made. 
+It is really suitable when there are equal number of observations in each class and that all predictions
+and prediction errors are equally important. 
+
+
+- LOGISTIC LOSS
+
+Logistic loss (or logloss) is a performance metric for evaluating the predictions of probabilities of
+membership to a given class. The scalar probability between 0 and 1 can be seen as a measure
+of confidence for a prediction by an algorithm. Predictions that are correct or incorrect are
+rewarded or punished proportionally to the confidence of the prediction.
+Smaller logloss is better. 
+
+
+- AREA UNDER ROC CURVE
+
+https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
+
+The AUC represents a model's ability to discriminate between positive and negative
+classes. 
+A ROC Curve is a plot of the true positive rate and the false positive rate for a given set of 
+probability predictions at dierent thresholds used to map the probabilities to class labels.
+
+
+- CONFUSION MATRIX
+            Act/Pre	1	0
+	1	TP	FN	-> P
+	0	FP	TN	-> N
+
+
+- CLASSIFICATION REPORT
+
+The classification report() function displays the precision, recall, F1-score and support for each
+class.
+
+Confusion matrix: 
+            Act/Pre	1	0
+	1	TP	FN	-> P
+	0	FP	TN	-> N
+
+Precision tells what is the percentage of true positive results out of the total predicted positive by the model.
+Precision = TP/(TP+FP)
+
+Recall tells what is the percentage of true positive results out of the actual positive values. 
+Recall = TP/P
+
+If a model classify one class much better than other class then F1 score plays role. It makes balance 
+between precision and recall. 
+F1 score = 2 * (Precision * Recall)/(Precision+Recall)
+
+
+REGRESSION METRICS
+
+- MEAN ABSOLUTE ERROR
+
+The Mean Absolute Error (or MAE) is the sum of the absolute dierences between predictions
+and actual values. It gives an idea of how wrong the predictions were. The measure gives an
+idea of the magnitude of the error, but no idea of the direction
+
+- MEAN SQUARED ERROR
+
+
+
+- R SQUARE 
+
+
+
 
 
