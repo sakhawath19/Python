@@ -22,3 +22,77 @@ R= 0.5,	R² = .5² = 0.25 	25% of the original variation is explained
 Intuitively better to understand R² than plain R.
 But R² can not explain the positive or negative correlation. Then R is needed. 
 
+---------------------------------------------------------------------------------------------------
+Essential statistics for data science
+
+Data types
+	- Numerical
+		- Discrete
+		- Continuous
+	- Categorical
+		- Nominal 
+		- Ordinal
+
+Measure of central tendency
+	- Mean 
+	- Median
+	- Mode 
+
+Measures of variability
+	- Variance
+	- Z score
+	- R score
+
+Measurements of relationship between variables
+	- Correlation
+
+Probability distribution function
+	- Probability density function(PDF)
+	- Probability mass function(PMF)
+	- Cumulative density function(CDF)
+
+Continuous data distribution
+	- Uniform distribution
+	- Normal/Gaussian distribution
+	- T-distribution 
+	- Chi-square distribution
+
+Discrete data distribution
+	- Poisson distribution
+	- Binomial distribution
+
+Moments
+	- First moment: Mean
+	- Second moment: Variance 
+	- Third moment: Skewness
+	- Fourth moment: Kurtosis 
+
+Probability
+	- Probability
+	- Conditional probability
+	- Independent events
+	- Mutually exclusive events
+	- Bayes theorem
+
+Accuracy
+	- True positive
+	- True negative
+	- False positive 
+	- False negative
+	- Sensitivity 
+	- Specificity
+	- Preictive value positive 
+	- Predictive value negative 
+
+Hypothesis testing and statistical significance 
+	- Null hypothesis
+	- Alternative hypothesis
+	- p-value
+	- Alpha 
+	- Beta 
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
