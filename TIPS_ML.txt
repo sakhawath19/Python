@@ -224,7 +224,7 @@ for example: if size and weight relationship R(sqr) is .81, then it tells there 
 
 SPOT-CHECK CLASSIFICATION ALGORITHMS
 ----------------------------------------------------------------------------------------------------------------------------
-
+It checks which algorithm perform well on your problem. 
 
 
 
@@ -273,7 +273,9 @@ IMPROVE PERFORMANCE WITH EMSEMBLES
 The three most popular methods for combining the predictions from different models are:
 
 - Bootstrap aggregation (Bagging): Building multiple models (typically of the same type) from 
-different subsamples of the training dataset. Ex: Bagged decision trees, random forest, extra trees
+different subsamples of the training dataset. 
+Ex: Bagged decision trees, random forest, extra trees
+-Bagging performs best with algorithms that have high variance.
  
 - Boosting: Building multiple models (typically of the same type) each of which learns to
 fix the prediction errors of a prior model in the sequence of models.
@@ -281,3 +283,52 @@ fix the prediction errors of a prior model in the sequence of models.
 - Voting: Building multiple models (typically of differing types) and simple statistics (like
 calculating the mean) are used to combine predictions.
 
+
+
+ALGORITHM PARAMETERS TUNING/HYPERPARAMETER OPTIMIZATION 
+----------------------------------------------------------------------------------------------------------------------------
+
+- Grid search parameter tuning
+- Random search parameter tuning
+
+
+
+FINALIZING MODEL
+----------------------------------------------------------------------------------------------------------------------------
+
+- Keep note of python version
+- Keep note of all library version 
+- Keep note of hypermarameter used for the model. It can be used later in other model. 
+
+
+
+PROJECT TEMPLATE
+----------------------------------------------------------------------------------------------------------------------------
+Python Project Template
+# 1. Prepare Problem
+# a) Load libraries
+# b) Load dataset
+
+# 2. Summarize Data
+# a) Descriptive statistics
+# b) Data visualizations
+
+# 3. Prepare Data
+# a) Data Cleaning
+# b) Feature Selection
+# c) Data Transforms
+
+# 4. Evaluate Algorithms
+# a) Split-out validation dataset
+# b) Test options and evaluation metric
+# c) Spot Check Algorithms
+# d) Compare Algorithms
+
+# 5. Improve Accuracy
+# a) Algorithm Tuning
+# b) Ensembles
+
+# 6. Finalize Model
+# a) Predictions on validation dataset
+# b) Create standalone model on entire training dataset
+# c) Save model for later use
