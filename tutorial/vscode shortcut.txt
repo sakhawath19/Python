@@ -23,16 +23,32 @@ ctrl + M + H/ctrl + M + U
 ctrl + shift + K
 
 # Command window to terminal 
-ctrl + @
+ctrl + '
 
 # Terminal to editor
-ctrl + @
+ctrl + '
 
 # Move to the next file
 ctrl + tab
 
 # Select multiple cursor to edit multple lines at the same time
 alt + left click
+
+
+// Place your key bindings in this file to override the defaultsauto[]
+// This will change your default key to toggle between terminal and editor
+// Place this code in keybindings.json. Access it by ctr+shift+p
+[
+    {
+        "key": "ctrl+'",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    }
+]
 
 
 
