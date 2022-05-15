@@ -25,6 +25,7 @@
 - >> python -m pydoc math			# displays brief description and function it contains 
 
 - >> python -m pydoc tuple 			# displays helps for class 
+- >> pydoc3 tuple
 
 - >> python -m pydoc pow			# displays doc for function 
 
