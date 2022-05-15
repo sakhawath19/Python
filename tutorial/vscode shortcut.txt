@@ -7,6 +7,10 @@ block comment (alt + shift + A)
 Comment Line (CTRL+K CTRL+C)
 remove CommentLine (CTRL+K CTRL+U)
 
+# Run the code with the code runner extension(install code runner extension first)
+alt + ctrl + n
+
+
 # Multiline comment
 generate multiline comment alt + shift + A
 
